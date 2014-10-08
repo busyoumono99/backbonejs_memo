@@ -7,14 +7,20 @@ require.config
 		backbone:		'../bower_components/backbone/backbone'
 		localStorage:	'../bower_components/backbone.localStorage/backbone.localStorage'
 		text:			'../bower_components/requirejs-text/text'
+		bootstrap:		'../bower_components/bootstrap/dist/js/bootstrap'
 	shim:
 		localStorage:
 			deps: ['backbone']
 			exports: 'Store'
+		bootstrap:
+			deps: ['jquery']
+			exports: 'Bootatrap'
+
 
 require [
-	'backbone'
-], (Backbone) ->
-	model_obj = new Backbone.Model()
-	model_obj.set('title', 'test')
-	console.log model_obj.get('title')
+	'collections/memoList'
+	'bootstrap'
+], (MemoList) ->
+	memos = new MemoList()
+	memos.fetch()
+	console.log memos

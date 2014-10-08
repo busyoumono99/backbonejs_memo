@@ -5,19 +5,24 @@ require.config({
     underscore: '../bower_components/underscore/underscore',
     backbone: '../bower_components/backbone/backbone',
     localStorage: '../bower_components/backbone.localStorage/backbone.localStorage',
-    text: '../bower_components/requirejs-text/text'
+    text: '../bower_components/requirejs-text/text',
+    bootstrap: '../bower_components/bootstrap/dist/js/bootstrap'
   },
   shim: {
     localStorage: {
       deps: ['backbone'],
       exports: 'Store'
+    },
+    bootstrap: {
+      deps: ['jquery'],
+      exports: 'Bootatrap'
     }
   }
 });
 
-require(['backbone'], function(Backbone) {
-  var model_obj;
-  model_obj = new Backbone.Model();
-  model_obj.set('title', 'test');
-  return console.log(model_obj.get('title'));
+require(['collections/memoList', 'bootstrap'], function(MemoList) {
+  var memos;
+  memos = new MemoList();
+  memos.fetch();
+  return console.log(memos);
 });
