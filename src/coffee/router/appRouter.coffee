@@ -13,19 +13,19 @@ define [
 		getApp: ->
 			require('app')
 		home: ->
-			@getApp.editView.hideview()
+			@getApp().editView.hideView()
 			return
 		add: ->
-			@getApp.editView.model = new Memo(null, {
-				collection: @getApp.collection
+			@getApp().editView.model = new Memo(null, {
+				collection: @getApp().collection
 				}
 			)
-			@editView.render()
+			@getApp().editView.render()
 			return
 		edit: (id) ->
-			@getApp.editView.model = @getApp.collection.get(id)
-			if @getApp.editView.model
-				@editView.render()
+			@getApp().editView.model = @getApp().collection.get(id)
+			if @getApp().editView.model
+				@getApp().editView.render()
 			return
 
 	AppRouter
