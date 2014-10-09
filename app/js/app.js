@@ -1,15 +1,12 @@
-define(['backbone', 'router/appRouter', 'collections/memoList', 'views/editView', 'models/memo'], function(Backbone, AppRouter, MemoList, EditView, Memo) {
+define(['backbone', 'collections/memoList', 'views/editView', 'views/headerView'], function(Backbone, MemoList, EditView, HeaderView) {
   'use strict';
   var app;
   app = {};
   app.collection = new MemoList();
   app.editView = new EditView();
-  app.router = new AppRouter();
-  app.editView.model = new Memo({
-    title: 'hoge',
-    content: 'fuga'
-  });
-  app.editView.render();
-  console.log(app.editView);
+  app.headerView = new HeaderView();
+
+  /* チェック：ヘッダービューの＋ボタンで入力フォームが表示される */
+  console.log(app.headerView);
   return Window.app = app;
 });

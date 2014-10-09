@@ -19,5 +19,8 @@ require.config
 
 require [
 	'app'
-], (app) ->
+	'router/appRouter'
+], (app, AppRouter) ->
+	app.router = new AppRouter()
+	Backbone.history.start()
 	app

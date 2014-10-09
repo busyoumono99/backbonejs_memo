@@ -20,6 +20,8 @@ require.config({
   }
 });
 
-require(['app'], function(app) {
+require(['app', 'router/appRouter'], function(app, AppRouter) {
+  app.router = new AppRouter();
+  Backbone.history.start();
   return app;
 });
