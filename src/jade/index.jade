@@ -27,27 +27,28 @@ html(lang="ja")
               span.glyphicon.glyphicon-plus
       // /.navbar-collapse
     // /.container-fluid
-  form#editForm.form-horizontal(role='form')
-    .form-group
-      label.col-sm-2.control-label(for='js-title') Title
-      .col-sm-9
-        input#js-title.form-control(type='text', placeholder='Title')
-    .form-group
-      label.col-sm-2.control-label(for='js-content') Content
-      .col-sm-9
-        input#js-content.form-control(type='text', placeholder='Content')
-    .form-group
-      .col-sm-offset-4.col-sm-2
-        button.btn.btn-primary(type='button')
-          span.glyphicon.glyphicon-floppy-disk  Save
-      .col-sm-6
-        button.btn.btn-default(type='button')
-          span.glyphicon.glyphicon-eject  Cancel
-  table#memoList.table.table-hover.table-bordered
-    tr
-      th.col-sm-2 Title
-      th.col-sm-9 Content
-      th.col-sm-1 Func
+  div.container
+    form#editForm.form-horizontal(role='form')
+      .form-group
+        label.col-sm-2.control-label(for='js-title') Title
+        .col-sm-9
+          input#js-title.form-control(type='text', placeholder='Title')
+      .form-group
+        label.col-sm-2.control-label(for='js-content') Content
+        .col-sm-9
+          input#js-content.form-control(type='text', placeholder='Content')
+      .form-group
+        .col-sm-offset-4.col-sm-8
+          .btn-group
+            button.btn.btn-primary(type='button')
+              span.glyphicon.glyphicon-floppy-disk  Save
+            button.btn.btn-default(type='button')
+              span.glyphicon.glyphicon-eject  Cancel
+    table#memoList.table.table-hover.table-bordered
+      tr
+        th.col-sm-2 Title
+        th.col-sm-9 Content
+        th.col-sm-1 Func
 
 
   script(type="text/javascript", src="bower_components/requirejs/require.js", data-main="js/main")
