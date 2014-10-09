@@ -18,9 +18,6 @@ require.config
 
 
 require [
-	'collections/memoList'
-	'bootstrap'
-], (MemoList) ->
-	memos = new MemoList()
-	memos.fetch()
-	console.log memos
+	'app'
+], (app) ->
+	app

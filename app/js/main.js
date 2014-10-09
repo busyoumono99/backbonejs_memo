@@ -20,9 +20,6 @@ require.config({
   }
 });
 
-require(['collections/memoList', 'bootstrap'], function(MemoList) {
-  var memos;
-  memos = new MemoList();
-  memos.fetch();
-  return console.log(memos);
+require(['app'], function(app) {
+  return app;
 });
