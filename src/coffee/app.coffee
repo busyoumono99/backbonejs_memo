@@ -9,7 +9,9 @@ define [
 
 	app = {}
 	app.collection = new MemoList()
-	app.editView = new EditView()
+	app.editView = new EditView({
+		collection: app.collection
+	})
 	app.headerView = new HeaderView()
 	app.listView = new ListView({
 		collection: app.collection

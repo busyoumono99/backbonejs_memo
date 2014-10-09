@@ -3,7 +3,9 @@ define(['backbone', 'collections/memoList', 'views/editView', 'views/headerView'
   var app;
   app = {};
   app.collection = new MemoList();
-  app.editView = new EditView();
+  app.editView = new EditView({
+    collection: app.collection
+  });
   app.headerView = new HeaderView();
   app.listView = new ListView({
     collection: app.collection
