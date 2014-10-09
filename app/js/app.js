@@ -1,10 +1,9 @@
-define(['backbone', 'collections/memoList'], function(Backbone, MemoList) {
+define(['backbone', 'router/appRouter', 'collections/memoList'], function(Backbone, AppRouter, MemoList) {
   'use strict';
   var app;
   app = {};
   app.collection = new MemoList();
-  app.collection.fetch().done(function() {
-    return console.log(JSON.stringify(app.collection));
-  });
+  app.router = new AppRouter();
+  console.log(app.router);
   return Window.app = app;
 });

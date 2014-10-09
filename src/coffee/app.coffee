@@ -1,14 +1,15 @@
 define [
 	'backbone'
+	'router/appRouter'
 	'collections/memoList'
-], (Backbone, MemoList) ->
+], (Backbone, AppRouter, MemoList) ->
 	'use strict'
 
 	app = {}
 	app.collection = new MemoList()
-	app.collection.fetch().done( ->
-		console.log JSON.stringify(app.collection)
-	)
+	app.router = new AppRouter()
+
+	console.log app.router
 
 
 	Window.app = app
