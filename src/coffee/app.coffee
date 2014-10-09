@@ -3,16 +3,19 @@ define [
 	'collections/memoList'
 	'views/editView'
 	'views/headerView'
-], (Backbone, MemoList, EditView, HeaderView) ->
+	'views/listView'
+], (Backbone, MemoList, EditView, HeaderView, ListView) ->
 	'use strict'
 
 	app = {}
 	app.collection = new MemoList()
 	app.editView = new EditView()
 	app.headerView = new HeaderView()
+	app.listView = new ListView({
+		collection: app.collection
+	})
 
-	### チェック：ヘッダービューの＋ボタンで入力フォームが表示される ###
-	console.log app.headerView
+	console.log app.listView
 
 
 	Window.app = app
